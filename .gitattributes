@@ -1,0 +1,3 @@
+*.js linguist-language=matlab
+*.css linguist-language=matlab
+*.html linguist-language=matlab

@@ -1,13 +1,12 @@
 function resim = bm3d_net_res(noisy, sigma)
 
 noisy = double(noisy);
-image = noisy * 15 / sigma;
-resss = BM3D(1, image, 15);
-imsiz = size(image);
+resss = BM3D(1, noisy, sigma);
+imsiz = size(noisy);
 mmind = mIndex(25, imsiz(1), imsiz(2));
 index = fast_nl_patches(resss, 3, 12, 8, mmind);
-image = gpuArray(image);
 index = gpuArray(index);
+image = gpuArray(noisy) * 15 / sigma;
 
 model = load('weight.mat');
 weights = model.weight;

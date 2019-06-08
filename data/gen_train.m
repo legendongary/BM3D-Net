@@ -1,3 +1,4 @@
+% this file has been deprecated due to bugs
 function gen_train(sigma)
 
 data = cell(400, 1);
